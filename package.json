@@ -1,0 +1,35 @@
+{
+	"name": "vue-depot",
+	"version": "0.1.0",
+	"author": "Wszerad Martynowski",
+	"license": "MIT",
+	"main": "./src/index.ts",
+	"scripts": {
+		"test": "mocha --require ts-node/register test/*.spec.ts"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wszerad/vue-depot.git"
+	},
+	"directories": {
+		"src": "src",
+		"test": "test"
+	},
+	"dependencies": {
+		"reflect-metadata": "^0.1.12",
+		"typescript": "^2.9.2",
+		"vue": "^2.5.16"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.1.0",
+		"@types/mocha": "^2.2.46",
+		"chai": "^4.1.2",
+		"mocha": "^5.2.0",
+		"ts-node": "^7.0.0"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 8"
+	]
+}

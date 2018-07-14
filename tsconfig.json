@@ -1,0 +1,43 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "commonjs",
+		"strict": false,
+		"jsx": "preserve",
+		"esModuleInterop": true,
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"sourceMap": true,
+		"baseUrl": ".",
+		"types": [
+			"node",
+			"mocha",
+			"chai",
+			"reflect-metadata"
+		],
+		"paths": {
+			"@/*": [
+				"src/*"
+			]
+		},
+		"lib": [
+			"es2017"
+		],
+		"typeRoots": [
+			"node_modules/@types"
+		]
+	},
+	"include": [
+		"lib/**/*.d.ts",
+		"lib/**/*.ts",
+		"lib/**/*.tsx",
+		"lib/**/*.vue",
+		"test/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
