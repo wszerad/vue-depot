@@ -3,10 +3,21 @@
 	"version": "0.1.0",
 	"author": "Wszerad Martynowski",
 	"license": "MIT",
-	"main": "./src/index.ts",
+	"main": "dist/vue-depot.umd.js",
+	"module": "dist/vue-depot.es5.js",
+	"typings": "dist/types/vue-depot.d.ts",
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"test": "mocha --require ts-node/register test/*.spec.ts"
+		"prebuild": "rimraf dist",
+		"build": "tsc --module commonjs && rollup -c rollup.config.ts",
+		"start": "rollup -c rollup.config.ts -w",
+		"test": "mocha --require ts-node/register test/*.spec.ts",
+		"test:watch": "mocha --watch --require ts-node/register test/*.spec.ts",
+		"test:prod": "npm run lint && npm run test -- --coverage --no-cache"
 	},
+	"homepage": "https://github.com/wszerad/vue-depot",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/wszerad/vue-depot.git"
@@ -15,17 +26,29 @@
 		"src": "src",
 		"test": "test"
 	},
-	"dependencies": {
-		"reflect-metadata": "^0.1.12",
-		"typescript": "^2.9.2",
-		"vue": "^2.5.16"
-	},
 	"devDependencies": {
 		"@types/chai": "^4.1.0",
 		"@types/mocha": "^2.2.46",
+		"@types/node": "^10.5.2",
+		"@types/reflect-metadata": "^0.1.0",
+		"@types/vue": "^2.0.0",
 		"chai": "^4.1.2",
 		"mocha": "^5.2.0",
-		"ts-node": "^7.0.0"
+		"reflect-metadata": "^0.1.12",
+		"rimraf": "^2.6.1",
+		"rollup": "^0.58.0",
+		"rollup-plugin-commonjs": "^9.0.0",
+		"rollup-plugin-json": "^3.0.0",
+		"rollup-plugin-node-resolve": "^3.0.0",
+		"rollup-plugin-sourcemaps": "^0.4.2",
+		"rollup-plugin-typescript2": "^0.11.1",
+		"ts-node": "^7.0.0",
+		"tsc": "^1.20150623.0",
+		"typescript": "^2.9.2",
+		"vue": "^2.5.16"
+	},
+	"engines": {
+		"node": ">=6.0.0"
 	},
 	"browserslist": [
 		"> 1%",

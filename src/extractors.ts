@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { moduleTypeMeta } from './decorators';
 import { devtoolHook } from './devtools';
+import { moduleTypeMeta } from './utils';
 
 interface TypesMap {
 	[key: string]: any;

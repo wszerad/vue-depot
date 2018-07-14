@@ -1,0 +1,1 @@
+export const moduleTypeMeta = Symbol('module');

@@ -3,8 +3,7 @@ import 'reflect-metadata';
 import Vue from 'vue';
 import { devtoolHook } from './devtools';
 import { extractOptions } from './extractors';
-
-export const moduleTypeMeta = Symbol('module');
+import { moduleTypeMeta } from './utils';
 
 export function Store(root: boolean = false) {
 	return function <T extends { new(...args: any[]): {} }>(constructor: T): T {
