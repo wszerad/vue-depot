@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { Store, module } from '../src/decorators';
-import { Depot } from '../src/Depot';
+import { Depot, Store, module } from '../src';
+
 
 interface Product {
 	id: string;
@@ -17,7 +17,7 @@ interface CartProduct {
 @Store()
 class User extends Depot {
 	public name: string = 'user';
-	public lastLogin: Date = null;
+	public lastLogin: Date | null = null;
 
 	public login() {
 		this.lastLogin = new Date();
@@ -50,7 +50,7 @@ class Root extends Depot {
 		},
 	];
 
-	public async asyncChange(id) {
+	public async asyncChange(id: string) {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
 				this.changeId(id);

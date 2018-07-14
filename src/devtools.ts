@@ -1,4 +1,2 @@
-export const devtoolHook = (function(this: any) {
-	return typeof this !== 'undefined' && this.__VUE_DEVTOOLS_GLOBAL_HOOK__;
-})();
+export const devtoolHook = typeof window !== 'undefined' && (window as any).__VUE_DEVTOOLS_GLOBAL_HOOK__;
 

@@ -18,7 +18,7 @@ export function Store(root: boolean = false) {
 					...options,
 				});
 
-				if (root) {
+				if (root && devtoolHook) {
 					devtoolHook.emit('vuex:init', this);
 					devtoolHook.on('vuex:travel-to-state', (targetState: any) => {
 						(this as any).state = targetState;
