@@ -1,6 +1,6 @@
 {
 	"name": "vue-depot",
-	"version": "0.5.2",
+	"version": "0.5.3",
 	"author": "Wszerad Martynowski",
 	"license": "MIT",
 	"main": "dist/vue-depot.umd.js",

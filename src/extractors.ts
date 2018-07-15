@@ -70,7 +70,7 @@ function handleMethod(option: DepotOptions, key: string, descriptor: PropertyDes
 			if (!(ret instanceof Promise)) {
 				devtoolHook.emit(
 					'vuex:mutation',
-					{type: `${option.name}:${key}`, args},
+					{type: `${option.name}:${key}`, payload: args},
 					this,
 				);
 			}
