@@ -67,7 +67,7 @@ function handleMethod(option: DepotOptions, key: string, descriptor: PropertyDes
 		option.methods[key] = function(...args: any[]) {
 			const ret = method.apply(this, args);
 
-			if (ret instanceof Promise) {
+			if (!(ret instanceof Promise)) {
 				devtoolHook.emit(
 					'vuex:mutation',
 					{type: `${option.name}:${key}`, args},
