@@ -94,7 +94,7 @@ function predefineGetters(modules: TypesMap): FunctionsMap {
 			const type = modules[key];
 			if (Array.isArray(type)) {
 				getterOverwrite += `${key}: this['${key}'].map((i)=>i.state),`;
-				setterOverwrite += `if('${key}' in data){ 
+				setterOverwrite += `if('${key}' in data){
 					this['${key}'] = data['${key}'].map((i) => {
 						var m = new modules['${key}'][0](); m.state = i; return m;
 					});
